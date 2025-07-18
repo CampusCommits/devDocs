@@ -74,7 +74,7 @@ Main folder for our app. All source code will be there.
 
 #### 📂 Other files and folders
 
-- `Dockerfile`: Dockerfile is used for dockerise you app. Dont do anything it will auto generate by `docker build -t myapp .`
+- `Dockerfile`:  Dockerfile is used for dockerise you app. Dont do anything it will auto generate by `docker build -t myapp .`
 - `docker-compose.yml`: docker compose file for local development.
 - `.github`: Includes issue and pull request templates for github.
 - `.husky`: husky configuration.
@@ -82,3 +82,58 @@ Main folder for our app. All source code will be there.
 - `.gitignore`: git ignore file
 - `eslint.config.mjs`: For linting
 - `package.json`: dependencies folder
+
+### 🚙 Utilities
+
+There are some utilities are there in this project so always use theese for better development
+- `utils/response.js`: Use this in place of res.json(). for better response.
+- `utils/asyncHandler.js`: Use for async functions avoid using try catch block in apis.
+- `utils/error.js`: AppError class is there. So use use this in your apis for error for ex.
+- In Javascript
+```javascript
+export const createUser = asyncHandler(async (req, res) => {
+    if(anyError) throw new AppError("message",400); // message,status
+	response(res, 201, "user created", { user: "testing uer" });
+});
+```
+- In Typescript
+```typescript
+export const createUser = asyncHandler(async (req: Request, res: Response) => {
+    if(anyError) throw new AppError("message",400); // message,status
+	response(res, 201, "user created", { user: "testing uer" });
+});
+```
+
+### 🪒 Snippets for VS-CODE
+If you are using vs code then there are snippets in `.vscode` folder for different-defferent function.
+- `controllers`: For making controller when you will type `con` then autocompletes to full controller template. 
+- `router`: When you write route then it will autocomple to give routers template.
+- for javascript
+```javascript
+/**
+*
+* @description route for creating user
+* @route POST /api/user/signup
+* @access Public
+* @param {import("express").Request} req
+* @param {import("express").Response} res
+*/
+export const createUser = asyncHandler(async (req, res) => {
+	
+});
+```
+- for typescript
+```typescript
+/**
+*
+* @description route for creating user
+* @route POST /api/user/signup
+* @access Public
+* @param req
+* @param res
+*/
+export const createUser = asyncHandler(async (req:Request, res:Response) => {
+	
+});
+```
+
