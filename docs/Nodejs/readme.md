@@ -11,8 +11,6 @@ Welcome to the Node.js documentation section. This directory contains comprehens
 ## Contents
 
 - Basic concepts and installation
-- Node.js core modules
-- NPM (Node Package Manager)
 - Asynchronous programming
 - Event-driven architecture
 - Error handling
