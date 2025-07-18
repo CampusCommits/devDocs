@@ -137,3 +137,30 @@ export const createUser = asyncHandler(async (req:Request, res:Response) => {
 });
 ```
 
+### 🪪 Middlewares
+In `src/middleware` already two useful middlewares with methods are defined.
+- `auth.middleware.js`: In this authMiddleware is defined which checks user token if not matched then not allowed to user if it is used in your api.
+```javascript
+import { Router } from "express";
+import { createUser } from "../controllers/user.controller.js";
+import { auth } from "../middlewares/auth.middleware.js";
+const userRouter = Router();
+userRouter.post("/createAdmin",auth, createUser);
+export default userRouter;
+```
+- In this `auth.middleware.js` createToken and verifyToken method is there which you can use in auth or your custom logic.
+```javascript
+// For creating token
+const token=await createToken({userId:"temp"},60); // time in minutes
+// for verifying token
+const isVerified=await verifyToken(token); // returns true if token is correct
+```
+- `error.middleware.js`: This middleware already is included in main `index.js` file. It handles all errors. for example.
+```javascript
+export const createTodo = asyncHandler(async (req, res) => {
+	const {todo="",completed=false}=req.body;
+    if(!todo) throw new AppError("todo is missing",400); // this error will be cached by error middleware and will send error response with this message to user
+    // db operation for saving todo
+    response(res, 201, "todo created", { todo });
+});
+```
