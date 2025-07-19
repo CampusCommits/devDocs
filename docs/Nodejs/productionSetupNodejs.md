@@ -1,3 +1,7 @@
+---
+id: nodejsProduction
+sidebar_position: 1
+---
 # Production setup of nodejs
 This guide provides a step-by-step walkthrough to configure, deploy, and run your Node.js application created using create-express-mongo-prod in a production environment.
 
