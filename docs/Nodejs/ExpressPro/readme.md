@@ -21,7 +21,3 @@ ExpressPro is an enhanced version of Express.js that provides additional utiliti
 - [GitHub Repository](https://github.com/suryanshvermaa/express-pro)
 - [NPM Package](https://www.npmjs.com/package/expresspro)
 - [Issue Tracker](https://github.com/suryanshvermaa/express-pro/issues)
-
-## License
-
-This project is licensed under the ISC License - see the [LICENSE](../LICENSE) file for details. 
