@@ -1,7 +1,6 @@
 ---
-id: nodejs
+id: expresspro
 sidebar_position: 2
-title: Express Pro Docs
 sidebar_label: Express Pro
 ---
 # ExpressPro Documentation
@@ -16,8 +15,6 @@ ExpressPro is an enhanced version of Express.js that provides additional utiliti
 4. [Response Utilities](./response-utilities.md)
 5. [Async Handler](./async-handler.md)
 6. [API Reference](./api-reference.md)
-7. [Contributing](./contributing.md)
-8. [Changelog](./changelog.md)
 
 ## Quick Links
 
